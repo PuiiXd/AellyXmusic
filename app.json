@@ -1,0 +1,50 @@
+{
+    "name": "AellyXmusic",
+    "description": "AellyXmusic To Play Songs And Videos In Telegram Voice Chat.",
+    "logo": "https://te.legra.ph/file/6da09c37a27e8978d67c0.jpg",
+    "keywords": [
+        "Telegram",
+        "MusicPlayer",
+        "VideoPlayer"
+    ],
+    "repository": "https://github.com/AellyOfficial/AellyXmusic",
+    "env": {
+        "SESSION": {
+            "description": "Pyrogram String Session",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Enter APP ID Please Download from my.telegram.org/apps",
+            "required": true
+        },
+        "HNDLR": {
+            "description": "it will be used as prefix in all commands",
+            "required": true,
+            "value": "+"
+        },
+        "API_HASH": {
+            "description": "Input HASH API Please Download from my.telegram.org/apps",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "List of User ID users count as admin everywhere (separator using space)",
+            "required": true
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "stack": "container"
+}
